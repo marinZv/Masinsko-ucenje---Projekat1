@@ -1,0 +1,48 @@
+a) Koja je razlika između k-fold, leave one out i random subsampling cross validation algoritama?
+
+K-fold, leave-one-out (LOO) i random subsampling su tri različita algoritma za unakrsnu validaciju (cross-validation) u mašinskom učenju, koja se koriste za procenu performansi modela na 
+temelju dostupnih podataka. Glavna razlika između ova tri algoritma leži u načinu na koji se podaci dele na skupove za treniranje i testiranje.
+
+K-fold cross-validation: Ovaj algoritam podatke deli u K jednakih delova (folds). Nakon toga, model se trenira na K-1 delova i testira na preostalom delu. Postupak se ponavlja K puta, tako
+da svaki deo služi kao testni skup jednom, a konačni rezultat se računa kao srednja vrednost rezultata K testiranja.
+
+Leave-one-out (LOO) cross-validation: Ovaj algoritam je sličan K-fold cross-validationu, ali se koristi kada se na raspolaganju ima vrlo mali broj podataka. Svaki primerak podataka se 
+izdvoji kao testni skup, dok se preostali primerci koriste za treniranje modela. Postupak se ponavlja za svaki primerak podataka, tako da konačni rezultat predstavlja srednju vrednost svih
+testiranja.
+
+Random subsampling cross-validation: Ovaj algoritam nasumično deli podatke na skupove za treniranje i testiranje. Na primer, 60% podataka se koristi za treniranje, a preostalih 40% se koristi
+za testiranje. Postupak se ponavlja nekoliko puta, a konačni rezultat se računa kao srednja vrednost rezultata svih testiranja.
+
+
+Ukratko, K-fold cross-validation se koristi kada se na raspolaganju ima dovoljno podataka, LOO cross-validation kada se na raspolaganju ima vrlo mali broj podataka,
+a random subsampling cross-validation kada se želi nasumično proceniti performanse modela na manjem uzorku podataka.
+
+b) Objasniti razliku između Gaussian, Multinomial i Bernouli Naive Bayes metoda.
+
+Gaussian, Multinomial i Bernoulli Naive Bayes su tri različita pristupa koji se koriste u Bayesovom klasifikatoru (Bayesian classifier). Glavna razlika između ovih metoda leži u vrsti 
+raspodele verovatnoće koja se koristi za opisivanje podataka u skupu podataka koji se koriste za obuku modela.
+
+Gaussian Naive Bayes: Ova metoda se koristi kada su ulazni podaci kontinuirane varijable koje se mogu opisati normalnom raspodelom (Gaussian distribution). Ovaj pristup se često koristi 
+za klasifikaciju podataka koji su povezani sa prirodnim fenomenima, poput visine ili težine. Kada se koristi Gaussian Naive Bayes, Bayesov klasifikator modelira podatke pomoću Gaussove 
+raspodele a zatim koristi te raspodele da bi izračunao verovatnoću za svaku klasu.
+
+Multinomial Naive Bayes: Ova metoda se koristi kada se podaci opisuju kao diskretne varijable koje opisuju broj pojavljivanja određenog događaja u skupu podataka. To je često slučaj kod 
+obrade prirodnih jezika, poput broja pojavljivanja određene reči u dokumentu. U ovom pristupu se pretpostavlja da se raspodela podataka može opisati multinomijalnom raspodelom, a Bayesov 
+klasifikator koristi te raspodele da bi izračunao verovatnoću za svaku klasu.
+
+Bernoulli Naive Bayes: Ova metoda se takođe koristi za diskretne varijable, ali se pretpostavlja da svaki podatak može imati samo dve vrednosti (binarni podaci). Na primer, ako se radi 
+klasifikacija emailova kao spam ili ne-spam, svaki podatak može predstavljati prisutnost ili odsutnost određene reči. U ovom pristupu, za svaki podatak se pretpostavlja Bernoullijeva
+raspodela, a Bayesov klasifikator koristi te raspodele da bi izračunao verovatnoću za svaku klasu.
+
+Ukratko, glavna razlika između Gaussian, Multinomial i Bernoulli Naive Bayes metoda leži u vrsti raspodele verovatnoće koju koriste za opisivanje skupa podataka, što zavisi od vrste 
+podataka koje se koriste u klasifikaciji.
+
+c) Objasniti pojam “linearna separabilnost”? Da li podaci grupisani u više od 2 klastera mogu biti linearno separabilni?
+
+Linearna separabilnost je pojam koji se koristi u mašinskom učenju kako bi se opisala sposobnost linearnog modela da razdvoji podatke u različite klastere. U osnovi, ako su podaci linearno
+separabilni, to znači da se mogu razdvojiti jednom ravni (u 2D) ili hiperravni (u višedimenzionalnom prostoru) na način da su svi primeri jednog klastera sa jedne strane ravni/hiperravni, a svi
+primeri drugog klastera sa druge strane.
+
+To znači da je moguće konstruisati linearni model koji će uspešno klasifikovati podatke sa tačnošću 100%. Međutim, ako su podaci grupisani u više od dva klastera, tada neće biti moguće
+pronaći jednu ravan/hiperravan koja će ih sve razdvojiti, tako da ne mogu biti linearno separabilni. U tom slučaju, model bi trebao koristiti neki drugi algoritam za klasifikaciju, poput višeklasne logističke regresije, metode stabla 
+odlučivanja ili nekih drugih metoda koje se koriste za višeklasnu klasifikaciju.
